@@ -11,7 +11,9 @@
         "type": "git",
         "url": "https://github.com/QCObjects/-types-qcobjects.git"
     },
-    "scripts": {},
+    "scripts": {
+        "test": "exit 0"
+    },
     "dependencies": {},
     "typeScriptVersion": "5.0"
 }
