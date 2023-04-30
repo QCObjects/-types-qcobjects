@@ -3,12 +3,48 @@
 // Definitions by: Jean Machuca <https://github.com/jeanmachuca>
 // Definitions: https://qcobjects.dev
 
-/**
- */
-
-import "./api";
+import { ClientRequest } from "http";
+import { Http2SecureServer, Http2Server, Http2ServerRequest, Http2Stream } from "http2";
+import { type QCObjectsElement, type QCObjectsShadowedElement, type InheritClass } from ".";
+import { Stream } from "stream";
 
 declare namespace QCObjects {
+    class Route {
+        name:string;
+        description:string;
+        microservice:string;
+        redirect_to?:string;
+        responseHeaders:any;
+        cors:any;
+    }
+
+    class BackendMicroservice extends InheritClass{
+        domain:string;
+        body:QCObjectsElement | QCObjectsShadowedElement | HTMLElement | string | undefined;
+        basePath:string;
+        route:Route;
+        projectPath?:string;
+        stream?:Http2Stream | Stream;
+        request?:Http2ServerRequest | ClientRequest;
+        routeParams?:any;
+        server: Http2SecureServer | Http2Server;
+
+        cors():void;
+        head(formData?:object|string):void;
+        get(formData?:object|string):void;
+        post(formData?:object|string):void;
+        put(formData?:object|string):void;
+        delete(formData?:object|string):void;
+        connect(formData?:object|string):void;
+        options(formData?:object|string):void;
+        trace(formData?:object|string):void;
+        patch(formData?:object|string):void;
+        finishWithBody(stream?:Http2Stream | Stream):void;
+        done():void;
+
+    }
+
+
     class QCObjectsElement extends HTMLElement{
         subelements(query:string):Array<HTMLElement|QCObjectsElement>;
     }
@@ -163,7 +199,7 @@ declare namespace QCObjects {
         __definition?: any;
         __new__?():void;
         __namespace?:string;
-        body?:QCObjectsElement|HTMLElement;
+        body?:QCObjectsElement |QCObjectsShadowedElement |HTMLElement | string | null | undefined;
 
     }
 
@@ -308,7 +344,7 @@ declare namespace QCObjects {
     let global:GLOBAL;
 
     function ClassFactory(className: string): any;
-    function Package(packageName: string, classesList: Array<any>): Array<any> | undefined;
+    function Package(packageName: string, classesList: Array<any> |undefined): Array<any> | undefined;
     function Import(packageName: string, ready?:Function, external?:Boolean): any;
 
 }
