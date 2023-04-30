@@ -6,6 +6,8 @@
 /**
  */
 
+import "./api";
+
 declare namespace QCObjects {
     class QCObjectsElement extends HTMLElement{
         subelements(query:string):Array<HTMLElement|QCObjectsElement>;
