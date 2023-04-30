@@ -9,11 +9,20 @@ import { type QCObjectsElement, type QCObjectsShadowedElement, type InheritClass
 import { Stream } from "stream";
 
 declare namespace QCObjects {
+    type Microservice = {
+        domain:string;
+        basePath:string;
+        body:any;
+        stream?:Http2Stream | Stream;
+        request?:Http2ServerRequest | ClientRequest;
+    }
+      
     class Route {
         name:string;
         description:string;
         microservice:string;
         redirect_to?:string;
+        headers:any;
         responseHeaders:any;
         cors:any;
     }
@@ -28,6 +37,8 @@ declare namespace QCObjects {
         request?:Http2ServerRequest | ClientRequest;
         routeParams?:any;
         server: Http2SecureServer | Http2Server;
+
+        constructor(microservice:Microservice);
 
         cors():void;
         head(formData?:object|string):void;
