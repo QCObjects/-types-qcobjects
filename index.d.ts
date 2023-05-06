@@ -228,6 +228,7 @@ declare namespace QCObjects {
         template?: string;
         templateURI?: string;
         tplsource?: string;
+        tplextension?: string;
         url?: string;
         method?: string;
         data?: any;
@@ -255,6 +256,7 @@ declare namespace QCObjects {
         body: QCObjectsElement | HTMLElement;
         templateURI: string;
         tplsource: string;
+        tplextension: string;
         template: string;
         validRoutingWays: Array<string>;
         basePath: string;
