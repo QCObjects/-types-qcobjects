@@ -18,12 +18,13 @@ declare namespace QCObjects {
 
     class Route {
         name: string;
-        description: string;
+        description?: string;
+        path: string;
         microservice: string;
         redirect_to?: string;
-        headers: any;
-        responseHeaders: any;
-        cors: any;
+        headers?: any;
+        responseHeaders?: any;
+        cors?: any;
     }
 
     class BackendMicroservice extends InheritClass {
