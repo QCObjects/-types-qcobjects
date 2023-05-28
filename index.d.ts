@@ -158,10 +158,15 @@ declare namespace QCObjects {
             value: any
         });
     }
+    type CacheController = {
+        cache:ComplexStorageCache;
+        cachedObjectID:string;
+        cachedResponse?:any;
+    }
     type ComplexCacheParams = {
         index:string;
-        load ():any;
-        alternate():any;
+        load (cacheController?:CacheController):any;
+        alternate(cacheController?:CacheController):any;
     }
     class ComplexStorageCache {
         object: any;
