@@ -213,12 +213,12 @@ declare namespace QCObjects {
 
 
     class InheritClass {
+        __instanceID: number;
         __classType?: string;
         __definition?: any;
         __new__?(): void;
         __namespace?: string;
         body?: QCObjectsElement | QCObjectsShadowedElement | HTMLElement | string | null | undefined;
-
     }
 
     class Processor extends InheritClass {
