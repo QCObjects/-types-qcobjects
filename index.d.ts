@@ -146,7 +146,7 @@ declare namespace QCObjects {
         _GLOBAL: any;
         set(name: string, value: any): void;
         get(name: string, _default: any): any;
-        __start__(): Promise<any>;
+        static __start__(): Promise<any>;
     }
     class GLOBAL extends GlobalSettings { }
     class DDO {
