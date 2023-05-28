@@ -158,6 +158,11 @@ declare namespace QCObjects {
             value: any
         });
     }
+    type ComplexCacheParams = {
+        index:string;
+        load ():any;
+        alternate():any;
+    }
     class ComplexStorageCache {
         object: any;
         index: string;
@@ -170,6 +175,8 @@ declare namespace QCObjects {
         setItem(cachedObjectID: string, value: any): void;
         isEmpty(object: any): boolean;
         save(object: any, cachedNewResponse: string): void;
+
+        constructor(cache:ComplexCacheParams);
 
     }
     class _ComponentWidget_ extends HTMLElement { }
