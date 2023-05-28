@@ -224,6 +224,7 @@ declare namespace QCObjects {
         __new__?(): void;
         __namespace?: string;
         body?: QCObjectsElement | QCObjectsShadowedElement | HTMLElement | string | null | undefined;
+        constructor(o?:any);
     }
 
     class Processor extends InheritClass {
