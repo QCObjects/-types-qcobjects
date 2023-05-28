@@ -81,8 +81,8 @@ declare namespace QCObjects {
         _new_(o: any): void;
         _encrypt(): string;
         _decrypt(): string;
-        encrypt(_string_: string, key: string): string;
-        decrypt(_string_: string, key: string): string;
+        static encrypt(_string_: string, key: string): string;
+        static decrypt(_string_: string, key: string): string;
 
     }
     class TagElements {
