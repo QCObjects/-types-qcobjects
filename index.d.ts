@@ -190,7 +190,7 @@ declare namespace QCObjects {
     function RegisterClass(_class_: any, namespace: string): void;
     function ComponentURI({ COMPONENTS_BASE_PATH, COMPONENT_NAME, TPLEXTENSION, TPL_SOURCE }): string;
     function waitUntil(func: Function, exp: Function): void;
-    function _super_(className: string, classMethodName: string, params: Array<any>): any;
+    function _super_(className: string, classMethodName: string, params?: Array<any>): any;
     function _DOMCreateElement(elementName: string): QCObjectsElement | HTMLElement;
     function shortCode(): string;
     function __getType__(_class_: any): string;
