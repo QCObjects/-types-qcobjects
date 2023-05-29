@@ -85,7 +85,7 @@ declare namespace QCObjects {
         static decrypt(_string_: string, key: string): string;
 
     }
-    class TagElements {
+    class TagElements extends Array {
         show(): void;
         hide(): void;
         effect(): void;
