@@ -406,9 +406,16 @@ declare namespace QCObjects {
         configFileName: string;
     }
     class VO { }
+    type EffectParams = {
+        duration:number; 
+        timing(timeFraction:number):number;
+        draw(progress:number);
+    };
+
     class Effect extends InheritClass {
         duration: number;
         apply(...args: Array<any>): any;
+        animate (effect:EffectParams);
     }
     class TransitionEffect extends Effect {
         component: Component;
@@ -431,8 +438,9 @@ declare namespace QCObjects {
     type TimerParams = {
         duration:number; 
         timing(timeFraction:number):number;
-        intervalInterceptor(progress:number);};
-        
+        intervalInterceptor(progress:number);
+    };
+
     class Timer extends InheritClass {
         duration: number;
         alive: boolean;
