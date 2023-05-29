@@ -208,7 +208,7 @@ declare namespace QCObjects {
     function getDocumentLayout(): string;
     function Export(fn: Function): Function;
     function New(__class__: any, args: any): any;
-    function Tag(tagName: string, innerHTML: string): TagElements;
+    function Tag(tagName: string, innerHTML?: string): TagElements;
     function Ready(e: Function): void;
     function _methods_(_: any): Array<any>;
     function set(_: any, _value_: any): any;
