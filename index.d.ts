@@ -302,6 +302,7 @@ declare namespace QCObjects {
         subtags: Array<HTMLElement | QCObjectsElement | QCObjectsShadowedElement>;
         bodyAttributes: any;
         dataAttributes: any;
+        serviceData?:any;
         constructor(component: ComponentParams);
         static route(): Promise<Component[]>;
         __done__(): Promise<void>;
