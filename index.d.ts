@@ -428,7 +428,11 @@ declare namespace QCObjects {
         effects: Array<string>;
 
     }
-    type TimerParams = {duration:number; timing(timeFraction:number):number; draw(progress:number);};
+    type TimerParams = {
+        duration:number; 
+        timing(timeFraction:number):number;
+        intervalInterceptor(progress:number);};
+        
     class Timer extends InheritClass {
         duration: number;
         alive: boolean;
